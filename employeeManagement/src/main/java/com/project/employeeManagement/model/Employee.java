@@ -3,9 +3,18 @@ package com.project.employeeManagement.model;
 public class Employee {
 
     private int id;
-    private String firstName;
-    private String lastName;
+    private String first_name;
+    private String last_name;
     private String email;
+    private double salary;
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 
     public int getId() {
         return id;
@@ -16,19 +25,19 @@ public class Employee {
     }
 
     public String getFirstName() {
-        return firstName;
+        return first_name;
     }
 
     public void setFirstName(String firstName) {
-        this.firstName = firstName;
+        this.first_name = firstName;
     }
 
     public String getLastName() {
-        return lastName;
+        return last_name;
     }
 
     public void setLastName(String lastName) {
-        this.lastName = lastName;
+        this.last_name = lastName;
     }
 
     public String getEmail() {
