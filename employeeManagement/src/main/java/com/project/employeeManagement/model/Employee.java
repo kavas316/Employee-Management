@@ -2,8 +2,7 @@ package com.project.employeeManagement.model;
 
 import javax.persistence.*;
 
-@Entity
-@Table(name = "employees")
+@Entity(name = "employees")
 public class Employee {
 
     @Id
