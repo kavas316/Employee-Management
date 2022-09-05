@@ -6,10 +6,7 @@ import com.project.employeeManagement.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class EmployeeController {
@@ -40,5 +37,12 @@ public class EmployeeController {
         // Save Employee from form to database
         employeeService.saveEmployee(employee);
         return "redirect:/";
+    }
+
+    @GetMapping("/showFormUpdate/{id}")
+    public String showFormUpdate(@PathVariable(value = "id")long id,Model model){
+        Employee employee = employeeService.getEmployeeById(id);
+        model.addAttribute("employee",employee);
+        return "update_employee";
     }
 }
